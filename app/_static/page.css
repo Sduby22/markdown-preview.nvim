@@ -78,6 +78,7 @@ main {
 .danger {
   background-color: #fce2e2;
   border-color: #dFb5b4;
+  color: #24292e;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   border: 1px solid;
@@ -86,6 +87,7 @@ main {
 .warning {
   background-color: #fff5b1;
   border-color: #dFb95b;
+  color: #24292e;
   padding: 0.2em 0.4em;
   border-radius: 3px;
   border: 1px solid;
