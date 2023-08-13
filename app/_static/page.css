@@ -79,7 +79,8 @@ main {
   font-weight: 600;
 }
 
-.danger .error {
+.danger,
+.error {
   background-color: #fce2e2;
   border-color: #dfb5b4;
   color: #24292e;
