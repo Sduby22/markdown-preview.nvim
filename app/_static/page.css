@@ -74,3 +74,19 @@ main {
   font-size: 14px;
   font-weight: 600;
 }
+
+.danger {
+  background-color: #fce2e2;
+  border-color: #dFb5b4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.warning {
+  background-color: #fff5b1;
+  border-color: #dFb95b;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  border: 1px solid;
+}

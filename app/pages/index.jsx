@@ -9,6 +9,7 @@ import footnote from 'markdown-it-footnote'
 import markdownItAnchor from 'markdown-it-anchor'
 import markdownItToc from 'markdown-it-toc-done-right'
 import markdownDeflist from 'markdown-it-deflist'
+import markdownItContainer from 'markdown-it-container'
 
 import mk from './katex'
 import chart from './chart'
@@ -190,6 +191,24 @@ export default class PreviewPage extends React.Component {
         .use(emoji)
         .use(taskLists)
         .use(markdownDeflist)
+        .use(markdownItContainer, 'warning', {
+          validate: function (params) {
+            const ret = params.trim() === 'warning'
+            return ret
+          },
+          
+          render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+              // opening tag
+              return '<div class="warning">\n';
+            } else {
+              // closing tag
+              return '</div>\n';
+            }
+          },
+
+          marker: ':'
+        })
         .use(footnote)
         .use(image)
         .use(markdownImSize)
