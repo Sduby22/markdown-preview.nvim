@@ -1,4 +1,7 @@
-html,body,#__next,main {
+html,
+body,
+#__next,
+main {
   min-height: 100vh;
   margin: 0;
 }
@@ -55,7 +58,8 @@ main {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   line-height: 24px;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 #page-header svg {
@@ -77,7 +81,7 @@ main {
 
 .danger {
   background-color: #fce2e2;
-  border-color: #dFb5b4;
+  border-color: #dfb5b4;
   color: #24292e;
   padding: 0.2em 0.4em;
   border-radius: 3px;
@@ -86,7 +90,16 @@ main {
 
 .warning {
   background-color: #fff5b1;
-  border-color: #dFb95b;
+  border-color: #dfb95b;
+  color: #24292e;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.info {
+  background-color: #c8e1ff;
+  border-color: #9abcfb;
   color: #24292e;
   padding: 0.2em 0.4em;
   border-radius: 3px;

@@ -176,7 +176,7 @@ export default class PreviewPage extends React.Component {
           meta([
             ["---", "\\.\\.\\."],
             ["---", "\\.\\.\\."],
-          ])
+          ]),
         );
       }
       // katex
@@ -206,6 +206,20 @@ export default class PreviewPage extends React.Component {
             if (tokens[idx].nesting === 1) {
               // opening tag
               return '<div class="warning">\n';
+            } else {
+              // closing tag
+              return "</div>\n";
+            }
+          },
+
+          marker: ":",
+        })
+        .use(markdownItContainer, "all", {
+          render: function (tokens, idx) {
+            if (tokens[idx].nesting === 1) {
+              const classname = tokens[idx].info.trim().replace(/\s+/g, "-");
+              // opening tag
+              return `<div class="${classname}">\n`;
             } else {
               // closing tag
               return "</div>\n";
@@ -297,7 +311,7 @@ export default class PreviewPage extends React.Component {
             renderDot();
           }
           refreshScroll();
-        }
+        },
       );
     };
 
