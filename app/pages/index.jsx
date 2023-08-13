@@ -176,7 +176,7 @@ export default class PreviewPage extends React.Component {
           meta([
             ["---", "\\.\\.\\."],
             ["---", "\\.\\.\\."],
-          ]),
+          ])
         );
       }
       // katex
@@ -196,25 +196,10 @@ export default class PreviewPage extends React.Component {
         .use(emoji)
         .use(taskLists)
         .use(markdownDeflist)
-        .use(markdownItContainer, "warning", {
-          validate: function (params) {
-            const ret = params.trim() === "warning";
-            return ret;
-          },
-
-          render: function (tokens, idx) {
-            if (tokens[idx].nesting === 1) {
-              // opening tag
-              return '<div class="warning">\n';
-            } else {
-              // closing tag
-              return "</div>\n";
-            }
-          },
-
-          marker: ":",
-        })
         .use(markdownItContainer, "all", {
+          validate: function (params) {
+            return true;
+          },
           render: function (tokens, idx) {
             if (tokens[idx].nesting === 1) {
               const classname = tokens[idx].info.trim().replace(/\s+/g, "-");
@@ -311,7 +296,7 @@ export default class PreviewPage extends React.Component {
             renderDot();
           }
           refreshScroll();
-        },
+        }
       );
     };
 
